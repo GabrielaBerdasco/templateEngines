@@ -1,26 +1,4 @@
-const express = require('express');
-const app = express();
-
-const handlebars = require('express-handlebars');
-
-app.set('view engine', 'hbs');
-
-app.engine(
-    'hbs',
-    handlebars.engine({
-        extname: '.hbs',
-        defaultLayout: 'index.hbs',
-        layoutsDir: __dirname + '/views/layouts',
-        partialsDir: __dirname + '/views/partials'
-    })        
-)
-
-
-app.set("views", "./views")
-
-app.use(express.static('public'));
-
-const products = () => [
+const products = [
     {
         id: "1",
         image: "https://dl.dropboxusercontent.com/s/ig08109teihkjv1/YerberaNegra.jpeg?dl=0",
@@ -68,18 +46,17 @@ const products = () => [
     }    
 ]
 
-app.get('/products', (req, res) => {
-    res.render('main', {
-        products: products()
-    });
-})
+function getProducts() {
+    return products
+}
 
-app.post('/products', (req, res) => {
-    res.render('form', { products: products() });
-})
+function saveProduct(product) {
+    let lastIndex = products.length - 1
+    let lastId = products[lastIndex].id
+    let newId = parseInt(lastId) + 1
+    const newProduct = { ...product, id: newId }
+    products.push(newProduct)
+    return products
+}
 
-const PORT = 8080
-
-app.listen(PORT, () => {
-    console.log(`Servidor escuchando en el puerto ${PORT}`)
-})
+module.exports = { getProducts, saveProduct }

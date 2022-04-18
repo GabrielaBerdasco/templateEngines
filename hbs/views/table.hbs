@@ -1,0 +1,33 @@
+{{#if products}}
+    <table >
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{price}}</td>
+                <td><img src="{{image}}" alt="{{name}}" width="100"></td>
+            </tr>
+            {{/each}}
+    </table>
+{{else}}
+    <h1>No hay productos</h1>
+{{/if}}
+
+<a href="http://localhost:8080/">
+    <button 
+        type="button" 
+        class="btn btn-primary" 
+        data-toggle="modal" 
+        data-target="#addModal"
+        style="margin: 1rem;"
+    >
+        Agregar nuevo producto
+    </button>
+</a>
