@@ -11,6 +11,7 @@ routerProducts.get('/products', (req, res) => {
 
 routerProducts.post('/products',(req, res) => {
     let newProduct = req.body
+    console.log(newProduct);
     saveProduct(newProduct)
     res.redirect('/products');
 })

@@ -1,0 +1,29 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        title='Productos'
+        link(rel='stylesheet', href='/css/style.css')
+    body
+        h1='Productos'
+        if (products)
+            table
+                thead
+                    tr
+                        th
+                            | Nombre
+                        th
+                            | Precio
+                        th
+                            | Imagen
+                tbody
+                    each product in products
+                        tr
+                            td=product.name
+                            td=product.price
+                            td
+                                img(src=product.image, width="150")
+        else
+            h1 No hay productos                    
+        a(href='http://localhost:8080/')
+            button Agregar producto
