@@ -54,7 +54,7 @@ function saveProduct(product) {
     let lastIndex = products.length - 1
     let lastId = products[lastIndex].id
     let newId = parseInt(lastId) + 1
-    const newProduct = { ...product, id: newId }
+    const newProduct = { ...product, id: newId.toString() }
     products.push(newProduct)
     return products
 }
