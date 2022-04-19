@@ -6,7 +6,7 @@ html
         link(rel='stylesheet', href='/css/style.css')
     body
         h1 Formulario nuevo producto
-        form(action='/products', method='POST')
+        form(action='/', method='POST')
             label(for='product') Producto
             input(type='text', name='product', required)
             label(for='price') Precio
@@ -14,4 +14,4 @@ html
             label(for='image') Imagen
             input(type='text', name='image', required)
         a(href="http://localhost:8080/products") 
-            button Guardar producto
+            button(type='submit') Guardar producto
