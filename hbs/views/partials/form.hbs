@@ -1,9 +1,9 @@
-<form action="/products" method="post">
-    <label>Producto</label>
+<form action="/products" method="post" style="margin: 1rem;">
+    <label for="name">Producto</label>
     <input type="text" name="name" required>
-    <label>Precio</label>
+    <label for="price">Precio</label>
     <input type="number" name="price" required>
-    <label>Imagen</label>
+    <label for="image">Imagen</label>
     <input type="text" name="image" required>
-    <a href="http://localhost:8080/products"><button class="btn btn-success mt-3 mb-5">Guardar producto</button></a>
+    <a href="http://localhost:8080/products" style="margin: 1rem;"><button class="btn btn-success mt-3 mb-5">Guardar producto</button></a>
 </form>

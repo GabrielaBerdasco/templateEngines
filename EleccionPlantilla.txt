@@ -1,0 +1,3 @@
+De acuerdo a lo pedido en la consigna, el motor de plantillas de mi elección es 
+Handlebars porque no me resulto difícil la sintaxis, al estar integrado con express
+posee documentación muy detallada y clara. 

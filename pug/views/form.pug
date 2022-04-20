@@ -6,12 +6,12 @@ html
         link(rel='stylesheet', href='/css/style.css')
     body
         h1 Formulario nuevo producto
-        form(action='/', method='POST')
-            label(for='product') Producto
-            input(type='text', name='product', required)
+        form(action='/products', method='POST')
+            label(for='name') Producto
+            input(type='text', name='name', required)
             label(for='price') Precio
             input(type='number', name='price', required)
             label(for='image') Imagen
             input(type='text', name='image', required)
-        a(href="http://localhost:8080/products") 
+            a(href="http://localhost:8080/products") 
             button(type='submit') Guardar producto
